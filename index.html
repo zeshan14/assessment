@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Content Display</title>
+  <style>
+    body {
+      display: flex;
+      background-color: powderblue
+    }
+    
+    #left-panel {
+      width: 200px;
+      background-color: darkseagreen
+      padding: 10px;
+    }
+    
+    #content {
+      flex-grow: 1;
+      padding: 10px;
+    }
+  </style>
+  <script>
+    function showContent(contentId) {
+      var contents = document.getElementsByClassName("content");
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+      }
+      
+      document.getElementById(contentId).style.display = "block";
+    }
+  </script>
+</head>
+<body>
+  <div id="left-panel">
+    <ul>
+      <li><a href="#" onclick="showContent('home')">Home</a></li>
+      <li><a href="#" onclick="showContent('contact')">Contact</a></li>
+      <li><a href="#" onclick="showContent('information')">Information</a></li>
+      <li><a href="#" onclick="showContent('guide')">Guide</a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <div id="home" class="content" style="display: none;">
+      <h2>Home</h2>
+      <p>Welcome to the home page.</p>
+    </div>
+    <div id="contact" class="content" style="display: none;">
+      <h2>Contact</h2>
+      <p>Contact information goes here.</p>
+    </div>
+    <div id="information" class="content" style="display: none;">
+      <h2>Information</h2>
+      <p>Additional information goes here.</p>
+    </div>
+    <div id="guide" class="content" style="display: none;">
+      <h2>Guide</h2>
+      <p>Guidance and instructions go here.</p>
+    </div>
+  </div>
+</body>
+</html>
